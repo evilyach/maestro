@@ -122,13 +122,13 @@ class Maestro:
 
     def load_lstm_model(self):
         self.model.load_weights(self.model_filename)
-        self.model.compile(loss='categorical_crossentropy', optimizer='adam')
+        self.model.compile(loss="categorical_crossentropy", optimizer="adam")
 
     def get_random_seed(self):
         self.pattern = self.x_data[numpy.random.randint(0, len(self.x_data) - 1)]
 
         print("Random Seed:")
-        print("\"", ''.join([self.num_to_char[value] for value in self.pattern]), "\"")
+        print('"', "".join([self.num_to_char[value] for value in self.pattern]), '"')
 
     def generate(self):
         for i in range(1000):
@@ -141,7 +141,7 @@ class Maestro:
             sys.stdout.write(result)
 
             self.pattern.append(index)
-            self.pattern = self.pattern[1:len(self.pattern)]
+            self.pattern = self.pattern[1 : len(self.pattern)]
 
 
 def main():
